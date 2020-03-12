@@ -1,5 +1,6 @@
 package com.basis.cursomc.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,10 @@ public class CategoriaService {
 		} catch(EmptyResultDataAccessException e) {
 			throw new EmptyResultDataException("Não é possível excluir uma categoria inexistente.");
 		}
-		
+	}
+	
+	public List<Categoria> findAll() {
+		List<Categoria> list = repo.findAll();
+		return list;
 	}
 }
